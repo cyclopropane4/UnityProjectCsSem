@@ -3,6 +3,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    [SerializeField] private GameObject player;
+    [SerializeField] private float speedMod = .1f;
+
     void Start()
     {
         
@@ -12,19 +16,20 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
+        
         // Align to player position
-        transform.position = player.transform.position;
+        //transform.position = player.transform.position;
         
         // Rotate left
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * 100, Space.World);
+            transform.Translate(new Vector3(0, -1, 0) * speedMod * Time.deltaTime * 100, Space.World);
         }
         
         // Rotate right
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * 100, Space.World);
+            transform.Translate(new Vector3(0, 1, 0) * speedMod * Time.deltaTime * 100, Space.World);
         }
     
     }
