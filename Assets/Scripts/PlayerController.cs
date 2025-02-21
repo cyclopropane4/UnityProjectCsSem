@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         {
         
         // Align to player position
         transform.position = player.transform.position;
@@ -27,6 +26,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * 100, Space.World);
         }
-    }
+    
     }
 }
